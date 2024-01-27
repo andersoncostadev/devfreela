@@ -12,6 +12,7 @@
             Skills = new List<UserSkill>();
             OwnedProjects = new List<Project>();
             FreeLanceProjects = new List<Project>();
+            Comments = new List<ProjectComment>();
         }
 
         public string? FulName { get; private set; }
@@ -22,5 +23,6 @@
         public List<UserSkill>? Skills { get; private set; }
         public List<Project>? OwnedProjects { get; private set; }
         public List<Project>? FreeLanceProjects { get; private set; }
+        public List<ProjectComment> Comments { get; private set; }
     }
 }

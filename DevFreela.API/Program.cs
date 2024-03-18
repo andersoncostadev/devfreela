@@ -9,7 +9,9 @@ using DevFreela.Application.Commands.UpdateProject;
 using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Application.Queries.GetAllSkills;
 using DevFreela.Application.Queries.GetUser;
+using DevFreela.Core.Reposiotires;
 using DevFreela.Infrastructure.Persistence.Repositories;
+using DevFreela.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +35,10 @@ builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies(typeof(F
 builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies(typeof(GetAllSkillsQuery).Assembly); });
 builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies(typeof(GetAllProjectsQuery).Assembly); });
 builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies(typeof(GetUserQuery).Assembly); });
+
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 
 var app = builder.Build();
 

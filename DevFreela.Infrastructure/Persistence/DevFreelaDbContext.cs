@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace DevFreela.Infrastructure.Persistence.Repositories
+namespace DevFreela.Infrastructure.Persistence
 {
     public class DevFreelaDbContext : DbContext
     {

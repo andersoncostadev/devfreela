@@ -4,7 +4,7 @@ using DevFreela.Core.Reposiotires;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
-namespace DevFreela.Infrastructure.Repositories
+namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     public class SkillRepository : ISkillRepository
     {

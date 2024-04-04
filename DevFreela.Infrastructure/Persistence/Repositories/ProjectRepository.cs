@@ -1,12 +1,11 @@
 ﻿using Dapper;
 using DevFreela.Core.Entities;
 using DevFreela.Core.Reposiotires;
-using DevFreela.Infrastructure.Persistence.Repositories;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace DevFreela.Infrastructure.Repositories
+namespace DevFreela.Infrastructure.Persistence.Repositories
 {
     public class ProjectRepository : IProjectRepository
     {
@@ -23,10 +22,10 @@ namespace DevFreela.Infrastructure.Repositories
 
         public async Task<Project> GetByIdAsync(int id)
         {
-           return await _dbContext.Projects!
-                .Include(p => p.Client!)
-                .Include(p => p.Freelancer!)
-                .SingleOrDefaultAsync(p => p.Id == id);
+            return await _dbContext.Projects!
+                 .Include(p => p.Client!)
+                 .Include(p => p.Freelancer!)
+                 .SingleOrDefaultAsync(p => p.Id == id);
         }
         public async Task AddAsync(Project project)
         {

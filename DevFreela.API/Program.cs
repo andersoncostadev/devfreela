@@ -3,6 +3,8 @@ using DevFreela.API.Models;
 using DevFreela.API.Validators;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Core.Reposiotires;
+using DevFreela.Core.Services;
+using DevFreela.Infrastructure.Auth;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using DevFreela.Infrastructure.Repositories;
 using FluentValidation;
@@ -29,6 +31,7 @@ builder.Services.AddMediatR(cfg => { cfg.RegisterServicesFromAssemblies(typeof(C
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

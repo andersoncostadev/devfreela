@@ -12,8 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DevFreela.API.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    [Route("api/projects")]
     public class ProjectsController : ControllerBase
     {
         private readonly IMediator _mediator;
